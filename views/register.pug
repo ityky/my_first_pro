@@ -1,0 +1,60 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0')
+        title 注册
+        link(href='stylesheets/index1.css', rel='stylesheet', type='text/css')
+        link(rel='stylesheet', href='stylesheets/amazeui.min.css')
+        link(rel='stylesheet', href='stylesheets/style1.css')
+    body
+        header#header
+            span.title1 注册
+        .content
+            .register-box
+                .form-box
+                    form(action='/register', method='post', onsubmit="return validate_form(this)")
+                        input(type='hidden',name='isMobileOrEmail',id='isMobileOrEmail')
+                        .row.row-input.clearfix
+                            .row-r
+                                input.input_box(placeholder='输入手机号/邮箱', name='user')
+                                span#userError
+                        .row.row-input.clearfix
+                            .row-r
+                                input.input_box(placeholder='输入昵称', name='name')
+                                span#nameError
+                        .row.row-input.clearfix
+                            .row-r
+                                input.input_box(placeholder='输入密码', name='password',type="password")
+                                span#passwordError
+                        .row.row-input.clearfix
+                            .row-r
+                                input.input_box(placeholder='再次输入密码', name='repeat_password',type="password")
+                                span#repeat_password
+                        .row.row-btn
+                             input.green-btn(type='submit', value='确认')
+            div.routes-error #{errors}
+            .am-navbar.am-cf.am-navbar-default.footer(data-am-widget='navbar', id='')
+                ul.am-navbar-nav.am-cf.am-avg-sm-4
+                    li
+                        a(href='/')
+                            span
+                                img(src='images/nav.png')
+                            span.am-navbar-label 点餐
+                    li
+                        a(href='/login')
+                            span
+                                img(src='images/nav2.png')
+                            span.am-navbar-label 登录
+                    li
+                        a(href='/register')
+                            span
+                                img(src='images/nav3.png')
+                            span.am-navbar-label 注册
+                    li
+                        a(href='#')
+                            span
+                                img(src='images/nav4.png')
+                            span.am-navbar-label 我的
+        script(src="../javascripts/jquery-3.3.1.min.js")
+        script(src="../javascripts/register.js")

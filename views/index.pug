@@ -1,0 +1,100 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title 厨房
+        meta(name='description', content='厨房')
+        meta(name='keywords', content='厨房')
+        meta(name='viewport', content='initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+        link(rel='stylesheet', href='stylesheets/amazeui.min.css')
+        link(rel='stylesheet', href='stylesheets/style1.css')
+        style(type='text/css').
+            #header
+            {
+                background: #FFF;
+                display: table;
+                width: 100%;
+                height: 45px;
+                line-height: 45px;
+                text-align: center;
+                position: relative;
+                border-bottom:1px solid #f60;
+            }
+            #header span
+            {
+                color: #f60;
+                font-size: 18px;
+                display: block;
+            }
+    body
+        header#header
+            span 首页
+        .am-slider.am-slider-default(data-am-widget='slider', data-am-slider='{}')
+            ul.nav
+                li
+                    a(href='search.html')
+                        img(src='images/icon.jpg')
+                        p 最新推荐
+                li
+                    a(href='search.html')
+                        img(src='images/icon1.jpg')
+                        p 热门菜谱
+                li
+                    a(href='search.html')
+                        img(src='images/icon2.jpg')
+                        p 人气菜肴
+                li
+                    a(href='yhq.html')
+                        img(src='images/icon3.jpg')
+                        p 优惠券
+            .am-titlebar.am-titlebar-default.title(data-am-widget='titlebar')
+                h2.am-titlebar-title    #{integralName}
+                nav.am-titlebar-nav
+                    a(href='#more') more »
+            ul.am-gallery.am-avg-sm-2.am-avg-md-3.am-avg-lg-4.am-gallery-default.product(data-am-widget='gallery')
+                each val in integralArr
+                    li
+                        .am-gallery-item
+                            a(href='#')
+                                img(src=val.img alt='')
+                                h3.am-gallery-title #{val.name}
+                                .am-gallery-desc
+                                    em #{val.price}
+                                    i.am-icon-cart-plus
+            .am-titlebar.am-titlebar-default.title(data-am-widget='titlebar')
+                h2.am-titlebar-title    #{hotName}
+                nav.am-titlebar-nav
+                    a(href='#more') more »
+            ul.am-gallery.am-avg-sm-2.am-avg-md-3.am-avg-lg-4.am-gallery-default.product(data-am-widget='gallery')
+                each val in hotArr
+                    li
+                        .am-gallery-item
+                            a(href='#')
+                                img(src=val.img alt='')
+                                h3.am-gallery-title #{val.name}
+                                .am-gallery-desc
+                                    em #{val.price}
+                                    i.am-icon-cart-plus
+            .h50
+            .am-navbar.am-cf.am-navbar-default.footer(data-am-widget='navbar', id='')
+                ul.am-navbar-nav.am-cf.am-avg-sm-4
+                    li
+                        a(href='/')
+                            span
+                                img(src='images/nav.png')
+                            span.am-navbar-label 点餐
+                    li
+                        a(href='/login')
+                            span
+                                img(src='images/nav2.png')
+                            span.am-navbar-label 登录
+                    li
+                        a(href='/register')
+                            span
+                                img(src='images/nav3.png')
+                            span.am-navbar-label 注册
+                    li
+                        a(href='#')
+                            span
+                                img(src='images/nav4.png')
+                            span.am-navbar-label 我的

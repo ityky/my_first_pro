@@ -1,0 +1,51 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0')
+        link(href='stylesheets/index1.css', rel='stylesheet', type='text/css')
+        link(rel='stylesheet', href='stylesheets/amazeui.min.css')
+        link(rel='stylesheet', href='stylesheets/style1.css')
+    body
+        header#header
+            span.title1 登录
+        .content
+            .login-box
+                .form-box
+                    form(action='/login', method='post')
+                        .row.row-input.clearfix
+                            .row-r
+                                input.input_box(placeholder='输入手机号/邮箱/昵称',name='name')
+                        .row.row-input.clearfix
+                            .row-r
+                                input.input_box(placeholder='输入密码',name='password')
+                        .h20
+                        .row.row-btn
+                            input.green-btn(type='submit', value='登录')
+                        .row.row-btn
+                            input.yellow-btn(type='submit', value='快速注册')
+                        .row.row-txt
+                            a.forget(href='#') 忘记密码
+                .h20
+            .am-navbar.am-cf.am-navbar-default.footer(data-am-widget='navbar', id='')
+                ul.am-navbar-nav.am-cf.am-avg-sm-4
+                    li
+                        a(href='/')
+                            span
+                                img(src='images/nav.png')
+                            span.am-navbar-label 点餐
+                    li
+                        a(href='/login')
+                            span
+                                img(src='images/nav2.png')
+                            span.am-navbar-label 登录
+                    li
+                        a(href='/register')
+                            span
+                                img(src='images/nav3.png')
+                            span.am-navbar-label 注册
+                    li
+                        a(href='#')
+                            span
+                                img(src='images/nav4.png')
+                            span.am-navbar-label 我的
